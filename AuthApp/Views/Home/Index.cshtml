@@ -8,6 +8,13 @@
     <h3>Here you can block and delete users</h3>
 </div>
 
+<div class="form-group">
+    <p>
+        <input placeholder="Site search" class="search-field" type="search">
+        <button type="submit" class="btn btn-success">Search</button>
+    </p>
+</div>
+
 @if(User.IsInRole("Admin"))
 {
 <button class="btn btn-default" id="IndexButton"> StartIndex</button>
