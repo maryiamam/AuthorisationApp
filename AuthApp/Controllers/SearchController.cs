@@ -39,5 +39,10 @@ namespace AuthApp.Controllers
             var results = searchResponse.Documents;
             return Json(results, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }
