@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace AuthApp.Controllers
 {
-    public class StoreManagerController : Controller
+    public class SearchController : Controller
     {
         // GET: StoreManager
         public async Task<ActionResult> StartIndexAsync()
