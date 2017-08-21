@@ -1,0 +1,28 @@
+﻿@model IEnumerable<AuthApp.Models.ViewModels.UserViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h3>Here you can block and delete users</h3>
+</div>
+
+@if(User.IsInRole("Admin"))
+{
+<button class="btn btn-default" id="IndexButton"> StartIndex</button>
+<button class="btn btn-default" id="SearchButton">Start Search</button>
+}
+
+@foreach (var user in Model)
+{
+<div class="row user">
+    <div class="col-xs-3">@user.Name</div>
+    <div class="col-xs-2">@(user.IsBlocked ? " Blocked" : " Not Blocked")</div>
+    <div class="col-xs-2">@user.Status</div>
+    <div class="col-xs-5">
+        <a class="btn btn-warning user__button" href="@Url.Action("BlockUser", "User", new {userId = user.Id})">@(user.IsBlocked ? " Unblock" : " Block")</a>
+        <a class="btn btn-danger user__button" href="@Url.Action("DeleteUser", "User", new {userId = user.Id})">Delete</a>
+    </div>
+</div>
+}
