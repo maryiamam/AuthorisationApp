@@ -1,0 +1,10 @@
+﻿@model AuthApp.Models.ViewModels.SearchViewModel
+@using (Html.BeginForm("FindAsync", "Search", FormMethod.Post))
+{
+    <div class="form-group">
+        <p>
+            <input placeholder="Site search" class="search-field" type="search" value="@Model.Phrase">
+            <button type="submit" class="btn btn-success">Search</button>
+        </p>
+    </div>
+}

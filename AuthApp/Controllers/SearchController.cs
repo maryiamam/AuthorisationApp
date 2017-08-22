@@ -1,4 +1,5 @@
 ﻿using AuthApp.Models;
+using AuthApp.Models.ViewModels;
 using Elasticsearch.Net;
 using Nest;
 using System;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AuthApp.Controllers
 {
@@ -31,18 +33,13 @@ namespace AuthApp.Controllers
             .Query(q => q
             .Match(m => m
             .Field(f => f.Text)
-            .Query(phraze)
-            )
-            )
-            );
-
+            .Query(phraze))));
             var results = searchResponse.Documents;
-            return Json(results, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult Index()
-        {
-            return View();
+            var viewModels = results.Select(res => new SearchResultViewModel()
+            {
+                Text = res.Text
+            });
+            return View("Index", viewModels);
         }
     }
 }

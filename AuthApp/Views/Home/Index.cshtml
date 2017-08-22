@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<AuthApp.Models.ViewModels.UserViewModel>
-
+@using AuthApp.Models.ViewModels
+@Html.Partial("_SearchPartial", new SearchViewModel())
 @{
     ViewBag.Title = "Home Page";
 }
@@ -8,17 +9,6 @@
     <h3>Here you can block and delete users</h3>
 </div>
 
-@using (Html.BeginForm("CreateUser", "Home",
-                FormMethod.Post
-))
-{
-    <div class="form-group">
-        <p>
-            <input placeholder="Site search" class="search-field" type="search">
-            <button type="submit" class="btn btn-success">Search</button>
-        </p>
-    </div>
-}
 
 @if(User.IsInRole("Admin"))
 {
