@@ -1,14 +1,10 @@
 ﻿using AuthApp.Models;
 using AuthApp.Models.ViewModels;
-using Elasticsearch.Net;
 using Nest;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace AuthApp.Controllers
 {
@@ -34,8 +30,7 @@ namespace AuthApp.Controllers
         [HttpPost]
         public async Task<ActionResult> FindAsync(SearchViewModel searchModel)
         {
-            var settings = new ConnectionSettings().DefaultIndex("defaultindex");
-            var client = new ElasticClient(settings);
+            var client = CreateElasticClient();
             var searchResponse = await client.SearchAsync<Article>(s => s
             .Query(q => q
             .Match(m => m
@@ -48,6 +43,51 @@ namespace AuthApp.Controllers
                 Title = res.Name
             });
             return View("SearchResult", viewModels);
+        }
+
+        private IElasticClient CreateElasticClient()
+        {
+            var settings = CreateConnectionSettings();
+            var client = new ElasticClient(settings);
+
+            if (client.IndexExists(ArticlesIndexName).Exists)
+            {
+                client.DeleteIndex(ArticlesIndexName);
+            }
+
+            client.CreateIndex(ArticlesIndexName, descriptor => descriptor
+                .Mappings(ms => ms
+                    .Map<Article>(m => m
+                        .AutoMap()
+                        .Properties(ps => ps
+                            .Text(t => t
+                                .Name(n => n.Text)
+                                .Analyzer("substring_analyzer"))
+                             .Text(t => t
+                                .Name(n => n.Name)
+                                .Analyzer("substring_analyzer"))
+                        )
+                    )
+                )
+                .Settings(s => s
+                    .Analysis(a => a
+                        .Analyzers(analyzer => analyzer
+                            .Custom("substring_analyzer", analyzerDescriptor => analyzerDescriptor
+                                .Tokenizer("standard")
+                                .Filters("lowercase", "substring")
+                            )
+                        )
+                        .TokenFilters(tf => tf
+                            .NGram("substring", filterDescriptor => filterDescriptor
+                                .MinGram(2)
+                                .MaxGram(15)
+                            )
+                        )
+                    )
+                )
+            );
+
+            return client;
         }
 
         private static ConnectionSettings CreateConnectionSettings()
