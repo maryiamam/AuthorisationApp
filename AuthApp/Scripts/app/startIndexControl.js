@@ -7,14 +7,14 @@ app.startIndexControl = (function ($) {
         var $startIndexBtn = $('#IndexButton');
         $startIndexBtn.click(function () {
             $startIndexBtn.html('Indexing...');
-            $.get('/StoreManager/StartIndexAsync', function (data) {
+            $.get('/Search/StartIndexAsync', function (data) {
                 $startIndexBtn.html('Start Index');
                 return;
             });
         });
         var $searchBtn = $('#SearchButton');
         $searchBtn.click(function () {
-            $.get('/StoreManager/FindAsync', { phraze: "blabla" }, function (data) {
+            $.get('/Search/FindAsync', { phraze: "blabla" }, function (data) {
                 return;
             });
         });

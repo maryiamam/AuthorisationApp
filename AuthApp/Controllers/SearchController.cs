@@ -19,13 +19,15 @@ namespace AuthApp.Controllers
         {
             var settings = new ConnectionSettings().DefaultIndex("defaultindex");
             var client = new ElasticClient(settings);
+            client.DeleteIndex("defaultindex");
             var testData = Article.GetTestData();
             var response = await client.IndexManyAsync(testData);
 
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
-        public async Task<ActionResult> FindAsync(string phraze)
+        [HttpPost]
+        public async Task<ActionResult> FindAsync(SearchViewModel searchModel)
         {
             var settings = new ConnectionSettings().DefaultIndex("defaultindex");
             var client = new ElasticClient(settings);
@@ -33,13 +35,14 @@ namespace AuthApp.Controllers
             .Query(q => q
             .Match(m => m
             .Field(f => f.Text)
-            .Query(phraze))));
+            .Query(searchModel.Phrase))));
             var results = searchResponse.Documents;
             var viewModels = results.Select(res => new SearchResultViewModel()
             {
-                Text = res.Text
+                Text = res.Text,
+                Title = res.Name
             });
-            return View("Index", viewModels);
+            return View("SearchResult", viewModels);
         }
     }
 }
