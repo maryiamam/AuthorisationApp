@@ -34,8 +34,9 @@ namespace AuthApp.Controllers
             var searchResponse = await client.SearchAsync<Article>(s => s
             .Query(q => q
             .Match(m => m
-            .Field(f => f.Text)
-            .Query(searchModel.Phrase))));
+                .Field(f => f.Text)
+                .Field(f => f.Name)
+                .Query(searchModel.Phrase))));
             var results = searchResponse.Documents;
             var viewModels = results.Select(res => new SearchResultViewModel()
             {
