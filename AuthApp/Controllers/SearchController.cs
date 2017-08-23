@@ -14,6 +14,7 @@ namespace AuthApp.Controllers
         private const string DefaultIndexName = "defaultindex";
         private const string ElasticSearchServerUri = @"http://localhost:9200";
         private const string ArticlesIndexName = "articles";
+        private const int ItemsPerPage = 20;
 
         // GET: StoreManager
         public async Task<ActionResult> StartIndexAsync()
@@ -32,6 +33,8 @@ namespace AuthApp.Controllers
         {
             var client = CreateElasticClient();
             var searchResponse = await client.SearchAsync<Article>(s => s
+            .From((searchModel.Page ?? 0) * (searchModel.ItemsPerPage ?? ItemsPerPage))
+            .Take(ItemsPerPage)
             .Query(q => q
             .Match(m => m
                 .Field(f => f.Text)
@@ -46,7 +49,7 @@ namespace AuthApp.Controllers
             return View("SearchResult", viewModels);
         }
 
-        private IElasticClient CreateElasticClient()
+        private static IElasticClient CreateElasticClient()
         {
             var settings = CreateConnectionSettings();
             var client = new ElasticClient(settings);
