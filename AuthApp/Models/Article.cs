@@ -20,7 +20,7 @@ namespace AuthApp.Models
                 {
                     Name = "Who is user",
                     Author = "Wiki",
-                    Text = "A user is a person who uses a computer or network service. " +
+                    Text = "A user is a person who user a computer or network service. " +
                     "Users generally use a system or a software product without the " +
                     "technical expertise required to fully understand it.",
                     CreatedOn = new DateTime(2015, 5, 22)
@@ -38,14 +38,14 @@ namespace AuthApp.Models
                     Name = "Software",
                     Author = "Lesha",
                     Text = "Some software products provide services to other systems and have " +
-                    "no direct end users.",
+                    "no direct end user.",
                     CreatedOn = new DateTime(2014, 2, 12)
                 },
                 new Article
                 {
                     Name = "End user",
                     Author = "Wiki",
-                    Text = "End users are the ultimate human users (also referred to as operators) " +
+                    Text = "End users are the ultimate human user (also referred to as operators) " +
                     "of a software product. The term is used to abstract and distinguish those who " +
                     "only use the software from the developers of the system, who enhance the software " +
                     "for end users.",
@@ -57,7 +57,7 @@ namespace AuthApp.Models
                     Author = "Petya",
                     Text = "In user-centered design, it also distinguishes the software operator from " +
                     "the client who pays for its development and other stakeholders who may not directly " +
-                    "use the software, but help establish its requirements.",
+                    "user the software, but help establish its requirements.",
                     CreatedOn = new DateTime(1915, 2, 21)
                 },
                 new Article
@@ -83,7 +83,7 @@ namespace AuthApp.Models
                     Name = "End-user category",
                     Author = "Masha",
                     Text = " When few constraints are imposed on the end-user category, especially when " +
-                    "designing programs for use by the general public, it is common practice to expect " +
+                    "designing programs for user by the general public, it is common practice to expect " +
                     "minimal technical expertise or previous training in end users.",
                     CreatedOn = new DateTime(2016, 5, 22)
                 },
@@ -109,7 +109,7 @@ namespace AuthApp.Models
                 {
                     Name = "Ultimate human users",
                     Author = "Lesha",
-                    Text = "End users are the ultimate human users (also referred to as operators) of a software " +
+                    Text = "End users are the ultimate human user (also referred to as operators) of a software " +
                     "product. The term is used to abstract and distinguish those who only use the software from" +
                     " the developers of the system, who enhance the software for end users.",
                     CreatedOn = new DateTime(2015, 5, 22)
@@ -118,7 +118,7 @@ namespace AuthApp.Models
                 {
                     Name = "Software agent",
                     Author = "Masha",
-                    Text = "Systems whose actor is another system or a software agent have no direct end users.",
+                    Text = "Systems whose actor is another system or a software agent have no direct end user.",
                     CreatedOn = new DateTime(2016, 5, 22)
                 },
                 new Article
@@ -145,7 +145,7 @@ namespace AuthApp.Models
                     Author = "Olya",
                     Text = "Each user account on a multi-user system typically has a home directory, in which to " +
                     "store files pertaining exclusively to that user's activities, which is protected from access " +
-                    "by other users (though a system administrator may have access). ",
+                    "by other user (though a system administrator may have access). ",
                     CreatedOn = new DateTime(2010, 3, 2)
                 },
                 new Article
@@ -161,8 +161,8 @@ namespace AuthApp.Models
                     Name = "Terminology",
                     Author = "Lesha",
                     Text = "Some usability professionals have expressed their dislike of the term 'user', proposing " +
-                    "it to be changed.[11] Don Norman stated that 'One of the horrible words we use is 'users'. I am " +
-                    "on a crusade to get rid of the word 'users'. I would prefer to call them 'people'.",
+                    "it to be changed. Don Norman stated that 'One of the horrible words we use is 'users'. I am " +
+                    "on a crusade to get rid of the word 'user'. I would prefer to call them 'people'.",
                     CreatedOn = new DateTime(2015, 5, 22)
                 },
                 new Article
@@ -177,7 +177,7 @@ namespace AuthApp.Models
                 {
                     Name = "Consumer",
                     Author = "Lesha",
-                    Text = "A consumer is a person or organization that uses economic services or commodities.",
+                    Text = "A consumer is a person or organization that user economic services or commodities.",
                     CreatedOn = new DateTime(2007, 2, 14)
                 },
                 new Article
@@ -192,7 +192,7 @@ namespace AuthApp.Models
                 {
                     Name = "Site",
                     Author = "Valya",
-                    Text = "Websites have many functions and can be used in various fashions; a website can be a " +
+                    Text = "Websites have many functions and can be user in various fashions; a website can be a " +
                     "personal website, a commercial website for a company, a government website or a non-profit " +
                     "organization website. Websites are typically dedicated to a particular topic or purpose, " +
                     "ranging from entertainment and social networking to providing news and education.",
@@ -261,7 +261,7 @@ namespace AuthApp.Models
                 {
                     Name = "Devices",
                     Author = "Lesha",
-                    Text = "As of 2016 end users can access websites on a range of devices, including desktop and " +
+                    Text = "As of 2016 end user can access websites on a range of devices, including desktop and " +
                     "laptop computers, tablet computers, smartphones and smart TVs.",
                     CreatedOn = new DateTime(2015, 3, 15)
                 },

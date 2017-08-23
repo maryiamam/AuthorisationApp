@@ -6,13 +6,14 @@
 </div>
 
 @model IEnumerable<AuthApp.Models.ViewModels.SearchResultViewModel>
+<div class = "results-count">@Model.Count() result(s) found.</div>
 @if (Model != null && Model.Count() != 0)
 {
      foreach (var searchResult in Model)
      {
         <div class="row search-item">
             <div class="col-xs-4">@searchResult.Title</div>
-            <div class="col-xs-8">@searchResult.Text</div>
+            <div class="col-xs-8 article-text">@searchResult.Text</div>
         </div>
      }
 }
