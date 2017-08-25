@@ -4,14 +4,14 @@
     ViewBag.Title = "Search results";
 }
 <div class="jumbotron">
-    <h3>ViewBag.Title</h3>
+    <h3>@ViewBag.Title</h3>
 </div>
 
 <div class="results-count"></div>
-!string.IsNullOrEmpty(Model.Phrase)
+@if(!string.IsNullOrEmpty(Model.Phrase))
 {
-<div class="search-results" id="searchResults" data-search-string="@Model.Phrase">
-</div>
+    <div class="search-results" id="searchResults" data-search-string="@Model.Phrase">
+    </div>
 }
 
 @section scripts
