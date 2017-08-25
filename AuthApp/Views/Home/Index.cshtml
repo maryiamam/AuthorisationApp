@@ -8,12 +8,6 @@
 </div>
 
 
-@if(User.IsInRole("Admin"))
-{
-<button class="btn btn-default" id="IndexButton"> StartIndex</button>
-<button class="btn btn-default" id="SearchButton">Start Search</button>
-}
-
 @foreach (var user in Model)
 {
 <div class="row user">
@@ -25,4 +19,11 @@
         <a class="btn btn-danger user__button" href="@Url.Action("DeleteUser", "User", new {userId = user.Id})">Delete</a>
     </div>
 </div>
+}
+
+
+
+@if (User.IsInRole("Admin"))
+{
+    <button class="btn btn-default" id="IndexButton"> StartIndex</button>
 }

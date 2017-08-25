@@ -1,4 +1,4 @@
-﻿@model AuthApp.Models.ViewModels.SearchResultViewModel
+﻿@model AuthApp.Models.ViewModels.SearchViewModel
 
 @{
     ViewBag.Title = "Search results";
@@ -7,14 +7,14 @@
     <h3>ViewBag.Title</h3>
 </div>
 
-<div class = "results-count">@Model.TotalCount result(s) found.</div>
-@if (Model.Hints != null && Model.Hints.Count() != 0)
+<div class="results-count"></div>
+!string.IsNullOrEmpty(Model.Phrase)
 {
-     foreach (var searchResult in Model.Hints)
-     {
-        <div class="row search-item">
-            <div class="col-xs-4">@searchResult.Title</div>
-            <div class="col-xs-8 article-text">@searchResult.Text</div>
-        </div>
-     }
+<div class="search-results" id="searchResults" data-search-string="@Model.Phrase">
+</div>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/scroll")
 }

@@ -30,6 +30,7 @@ namespace AuthApp.Models
                     Name = "What does user usually have",
                     Author = "Masha",
                     Text = "A user often has a user account and is identified to the system " +
+                    "by a username (or user name). A user often has a user account and is identified to the system " +
                     "by a username (or user name).",
                     CreatedOn = new DateTime(2016, 5, 22)
                 },
@@ -38,6 +39,7 @@ namespace AuthApp.Models
                     Name = "Software",
                     Author = "Lesha",
                     Text = "Some software products provide services to other systems and have " +
+                    "no direct end user. Some software products provide services to other systems and have " +
                     "no direct end user.",
                     CreatedOn = new DateTime(2014, 2, 12)
                 },
@@ -118,7 +120,8 @@ namespace AuthApp.Models
                 {
                     Name = "Software agent",
                     Author = "Masha",
-                    Text = "Systems whose actor is another system or a software agent have no direct end user.",
+                    Text = "Systems whose actor is another system or a software agent have no direct end user. " +
+                    "Systems whose actor is another system or a software agent have no direct end user.",
                     CreatedOn = new DateTime(2016, 5, 22)
                 },
                 new Article
@@ -153,6 +156,7 @@ namespace AuthApp.Models
                     Name = "Rules",
                     Author = "Masha",
                     Text = "Various computer operating-systems and applications expect/enforce different rules for " +
+                    "the form. Various computer operating-systems and applications expect/enforce different rules for " +
                     "the form.",
                     CreatedOn = new DateTime(2016, 5, 22)
                 },
@@ -170,6 +174,7 @@ namespace AuthApp.Models
                     Name = "Psycho",
                     Author = "Masha",
                     Text = "The term drug user is often used to refer to a person who consumes an illegal " +
+                    "psychoactive substance. The term drug user is often used to refer to a person who consumes an illegal " +
                     "psychoactive substance.",
                     CreatedOn = new DateTime(2016, 5, 22)
                 },
@@ -177,7 +182,8 @@ namespace AuthApp.Models
                 {
                     Name = "Consumer",
                     Author = "Lesha",
-                    Text = "A consumer is a person or organization that user economic services or commodities.",
+                    Text = "A consumer is a person or organization that user economic services or commodities. " +
+                    "A consumer is a person or organization that user economic services or commodities.",
                     CreatedOn = new DateTime(2007, 2, 14)
                 },
                 new Article
@@ -270,6 +276,7 @@ namespace AuthApp.Models
                     Name = "Tim Berners-Lee",
                     Author = "Masha",
                     Text = "The World Wide Web (WWW) was created in 1990 by the British CERN physicist " +
+                    "Tim Berners-Lee. The World Wide Web (WWW) was created in 1990 by the British CERN physicist " +
                     "Tim Berners-Lee.",
                     CreatedOn = new DateTime(1990, 1, 1)
                 },
@@ -277,7 +284,8 @@ namespace AuthApp.Models
                 {
                     Name = "CERN",
                     Author = "Lesha",
-                    Text = "On 30 April 1993, CERN announced that the World Wide Web would be free to use for anyone.",
+                    Text = "On 30 April 1993, CERN announced that the World Wide Web would be free to use for anyone." +
+                    "On 30 April 1993, CERN announced that the World Wide Web would be free to use for anyone.",
                     CreatedOn = new DateTime(2015, 5, 22)
                 },
                 new Article
@@ -293,6 +301,7 @@ namespace AuthApp.Models
                     Name = "Navigation",
                     Author = "Pasha",
                     Text = "These protocols offer a simple directory structure which the user navigates and " +
+                    "chooses files to download. These protocols offer a simple directory structure which the user navigates and " +
                     "chooses files to download. ",
                     CreatedOn = new DateTime(2013, 2, 5)
                 },
@@ -301,6 +310,8 @@ namespace AuthApp.Models
                     Name = "Plain text",
                     Author = "Masha",
                     Text = "Documents were most often presented as plain text files without formatting, or were " +
+                    "encoded in word processor formats." +
+                    "Documents were most often presented as plain text files without formatting, or were " +
                     "encoded in word processor formats.",
                     CreatedOn = new DateTime(2014, 6, 18)
                 },
@@ -317,6 +328,7 @@ namespace AuthApp.Models
                     Name = "Organization work",
                     Author = "Vitya",
                     Text = "Websites can be the work of an individual, a business or other organization, and are " +
+                    "typically dedicated to a particular topic or purpose. Websites can be the work of an individual, a business or other organization, and are " +
                     "typically dedicated to a particular topic or purpose. ",
                     CreatedOn = new DateTime(2006, 10, 8)
                 },
@@ -333,6 +345,7 @@ namespace AuthApp.Models
                     Name = "Languages",
                     Author = "Masha",
                     Text = " Websites are written in, or converted to, HTML (Hyper Text Markup Language) and are " +
+                    "accessed using a software interface classified as a user agent. Websites are written in, or converted to, HTML (Hyper Text Markup Language) and are " +
                     "accessed using a software interface classified as a user agent. ",
                     CreatedOn = new DateTime(2003, 6, 9)
                 },
@@ -363,6 +376,15 @@ namespace AuthApp.Models
                     "statistics) and Microsoft's IIS is also commonly used. Some alternatives, such as " +
                     "Nginx, Lighttpd, Hiawatha or Cherokee, are fully functional and lightweight.",
                     CreatedOn = new DateTime(2017, 8, 23)
+                },
+                new Article
+                {
+                    Name = "Static website",
+                    Author = "Kate",
+                    Text = "A static website is one that has web pages stored on the server in the format " +
+                    "that is sent to a client web browser. A static website is one that has web pages stored on the server in the format " +
+                    "that is sent to a client web browser.",
+                    CreatedOn = new DateTime(2014, 5, 27)
                 }
             };
             return testData;

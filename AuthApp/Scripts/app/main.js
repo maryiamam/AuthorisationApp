@@ -6,4 +6,7 @@ $(function () {
     app.onlineDetector.initialize();
     app.userControl.initialize();
     app.startIndexControl.initialize();
+    if (app.infiniteScroll) {
+        app.infiniteScroll.initialize();
+    }
 })

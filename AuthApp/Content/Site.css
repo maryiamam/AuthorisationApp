@@ -80,12 +80,6 @@ form {
     background: rgb(200,200, 200);
 }
 
-.article-text{
-    height: 20px;
-    width: 750px;
-    overflow-y: hidden;
-}
-
 .results-count {
     background: #e6e6fa;
     border-radius: 2px;
@@ -94,3 +88,5 @@ form {
     margin-bottom: 10px;
     margin-top: -20px;
 }
+
+

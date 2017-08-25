@@ -246,6 +246,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\app\infiniteScroll.js" />
     <Content Include="Scripts\app\main.js" />
     <Content Include="Scripts\app\onlineDetector.js" />
     <Content Include="Scripts\app\startIndexControl.js" />

@@ -15,11 +15,13 @@ namespace AuthApp
                         "~/Scripts/libs/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-            "~/Scripts/app/main.js",
-            "~/Scripts/app/onlineDetector.js",
-            "~/Scripts/app/userControl.js",
-            "~/Scripts/app/startIndexControl.js"
-            ));
+                        "~/Scripts/app/main.js",
+                        "~/Scripts/app/onlineDetector.js",
+                        "~/Scripts/app/userControl.js",
+                        "~/Scripts/app/startIndexControl.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/scroll").Include(
+                        "~/Scripts/app/infiniteScroll.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
