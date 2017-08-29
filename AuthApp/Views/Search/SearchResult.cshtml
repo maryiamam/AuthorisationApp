@@ -7,7 +7,7 @@
     <h3>@ViewBag.Title for "@Model.SearchString"</h3>
 </div>
 
-<div class="results-count">@Model.TotalCount</div>
+<span>Total Count: </span><div class="results-count">@Model.TotalCount</div>
 @if (!string.IsNullOrEmpty(Model.SearchString) && Model.TotalCount != 0)
 {
     <div class="search-results" id="searchResults" data-search-string="@Model.SearchString">
