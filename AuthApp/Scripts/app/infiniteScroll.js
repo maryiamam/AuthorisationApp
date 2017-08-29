@@ -5,7 +5,7 @@ app.infiniteScroll = (function ($) {
 
     var $searchResults;
     var searchString;
-    var page = 1;
+    var page = 2;
     var busy = false;
     var scrollFinished = false;
 

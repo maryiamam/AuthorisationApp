@@ -64,7 +64,7 @@ namespace AuthApp.Controllers
         private async Task<IHtmlDocument> GetDocument(IParserSettings parserSettings, SearchViewModel searchModel)
         {
             var htmlLoader = new HtmlLoader(parserSettings);
-            var source = await htmlLoader.GetSource(searchModel.Phrase);
+            var source = await htmlLoader.GetSource(searchModel.Phrase, searchModel.Page);
             var domParser = new HtmlParser();
             var document = await domParser.ParseAsync(source);
             return document;
